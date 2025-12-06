@@ -21,7 +21,7 @@ A simple, robust expense tracker application built with Python (Flask) and Supab
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/nirmalkumarchelladurai-lab/ExpenseTracker.git
 cd expense_tracker
 ```
 
