@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Summary - Expense Tracker{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Expense Summary</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Total Expenses by Category
+            </div>
+            <div class="card-body">
+                {% if category_totals %}
+                <ul class="list-group list-group-flush">
+                    {% for category, total in category_totals.items() %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ category }}
+                        <span class="badge bg-primary rounded-pill">${{ total }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="text-center my-3">No expenses to summarize.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <!-- Placeholder for future charts -->
+        <div class="card">
+            <div class="card-header">
+                Visual Breakdown
+            </div>
+            <div class="card-body text-center">
+                <p class="text-muted">Charts coming soon!</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
