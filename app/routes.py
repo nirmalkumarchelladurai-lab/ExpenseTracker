@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, redirect, url_for, request, flash,
 from app import supabase
 from datetime import datetime
 
-main_bp = Blueprint('main', __name__)
+main_bp = Blueprint('main', __name__, template_folder='templates')
 
 def get_user_id():
     return session.get('user')

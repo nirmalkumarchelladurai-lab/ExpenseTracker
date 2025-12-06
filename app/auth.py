@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash, session
 from app import supabase
 
-auth_bp = Blueprint('auth', __name__)
+auth_bp = Blueprint('auth', __name__, template_folder='templates')
 
 @auth_bp.route('/register', methods=['GET', 'POST'])
 def register():

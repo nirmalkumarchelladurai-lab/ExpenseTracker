@@ -12,8 +12,7 @@ def create_app(config_class=Config):
     if app.config['SUPABASE_URL'] and app.config['SUPABASE_KEY']:
         supabase = create_client(app.config['SUPABASE_URL'], app.config['SUPABASE_KEY'])
     else:
-        # Raise an error to stop execution if credentials are missing
-        raise ValueError("Supabase URL and Key must be set in the .env file.")
+        print("Warning: Supabase URL or Key not set.")
 
     from app.auth import auth_bp
     from app.routes import main_bp
